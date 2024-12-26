@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="200">
+    <!-- Prostokąt w tle -->
+    <rect x="10" y="10" width="480" height="180" rx="15" ry="15" fill="#ffa500">
+      <animate attributeName="fill" values="#ffa500;#ff4500;#ffa500" dur="3s" repeatCount="indefinite" />
+    </rect>
+    <!-- Napisy -->
+    <text x="250" y="110" font-family="Arial, sans-serif" font-size="40" fill="#ffffff" text-anchor="middle" alignment-baseline="middle">
+      Tata Radek
+      <animate attributeName="fill" values="#ffffff;#ffff00;#ffffff" dur="2s" repeatCount="indefinite" />
+    </text>
+    <!-- Animowana kropka -->
+    <circle cx="50" cy="150" r="10" fill="#ffffff">
+      <animate attributeName="cx" from="50" to="450" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="cy" from="150" to="50" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </svg>
