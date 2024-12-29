@@ -1,19 +1,26 @@
+
 .results {
     display: grid;
     column-gap: 14px;
     row-gap: 14px;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 400px));
     margin-top: 50px;
     justify-content: space-around;
   }
+
+  form {
+    margin-top: 20px; /* Dodany odstęp od nagłówka */
+    
+  }
   
   input[type="text"] {
+    margin-left: 20px;
     border: solid 1px var(--primary-color);
     padding: 10px;
     border-radius: 8px;
-    margin-right: 4px;
+    margin-right: 14px;
     display: inline-block;
-    width: 30%;
+    width: 10%;
   }
   
   button {

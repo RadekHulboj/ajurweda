@@ -11,11 +11,9 @@ import { RouterModule } from '@angular/router';
   ],
   template: `
   <main>
-   <a [routerLink]="['/']">
+   <a [routerLink]="['/']" class="link-class">
     <header class="brand-name">
       <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-      <p>tata radek<p>
-      <img class="brand-logo" src="/assets/ajurweda.svg" alt="logo" aria-hidden="true">
     </header>
    </a>
     <section class="content">
