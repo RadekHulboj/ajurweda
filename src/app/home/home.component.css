@@ -1,9 +1,9 @@
 
 .results {
     display: grid;
-    column-gap: 14px;
+    column-gap: 30px;
     row-gap: 14px;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 400px));
+    grid-template-columns: repeat(5, 1fr);
     margin-top: 50px;
     justify-content: space-around;
   }
@@ -14,7 +14,6 @@
   }
   
   input[type="text"] {
-    margin-left: 20px;
     border: solid 1px var(--primary-color);
     padding: 10px;
     border-radius: 8px;
