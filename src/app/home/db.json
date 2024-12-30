@@ -99,6 +99,26 @@
             "availableUnits": 6,
             "wifi": true,
             "laundry": true
+        },
+        {
+            "id": 10,
+            "name": "Capital Safe Towns1",
+            "city": "Portland",
+            "state": "OR",
+            "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+            "availableUnits": 6,
+            "wifi": true,
+            "laundry": true
+        },
+        {
+            "id": 11,
+            "name": "Capital Safe Towns2",
+            "city": "Portland",
+            "state": "OR",
+            "photo": "https://angular.io/assets/images/tutorials/faa/webaliser-_TPTXZd9mOo-unsplash.jpg",
+            "availableUnits": 6,
+            "wifi": true,
+            "laundry": true
         }
     ]
 }

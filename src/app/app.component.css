@@ -5,11 +5,22 @@
   text-align: center; /* Opcjonalne: centruj zawartość w poziomie */
 }
 
+section.content {
+  margin-top: 20px; /* Dopasuj do wysokości nagłówka */
+}
+
 header.brand-name {
+  position: fixed; /* Ustawienie pozycji na stałą */
+  top: 0; /* Przyczepienie do górnej krawędzi */
+  width: 100%; /* Nagłówek zajmuje pełną szerokość */
+  z-index: 1000; /* Zapewnia, że nagłówek będzie ponad innymi elementami */
+  background-color: white; /* Dodaj tło, aby zakryć przewijaną zawartość */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /*Opcjonalnie: cień dla efektu wizualnego */
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px 0px;
+  padding: 10px 100px;
   text-align: left;
   margin-left: 10;
   width: 100%;
@@ -28,4 +39,23 @@ main {
   padding: 0;
   box-sizing: border-box;
   display: block; /* Usuń flex, jeśli był */
+}
+
+.menu {
+  display: flex; /* Układ menu w poziomie */
+  gap: 50px; /* Odstępy między linkami */
+  margin-left: auto; /* Przepchnij menu do prawej strony */
+  
+}
+
+.menu-item {
+  text-decoration: none; /* Usuń podkreślenie linków */
+  color: #605DC8; /* Kolor tekstu linków */
+  font-size: 16px; /* Rozmiar czcionki */
+  font-weight: 500; /* Grubość tekstu */
+  transition: color 0.3s; /* Animacja koloru linków */
+}
+
+.menu-item:hover {
+  color: #007BFF; /* Kolor linku po najechaniu */
 }

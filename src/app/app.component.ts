@@ -13,6 +13,11 @@ import { RouterModule } from '@angular/router';
       <a [routerLink]="['/']" class="link-class">
         <header class="brand-name">
           <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+          <nav class="menu">
+            <a [routerLink]="['/text1']" class="menu-item">Events</a>
+            <a [routerLink]="['/text2']" class="menu-item">Blog</a>
+            <a [routerLink]="['/text3']" class="menu-item">Contact</a>
+          </nav>
         </header>
       </a>
     </section>
