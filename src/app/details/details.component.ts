@@ -13,8 +13,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   template: `
-  <article>
+  <article class="container">
+    <section>
     <img class="listing-photo" [src]="housingLocation?.photo" alt="Exterior photo of {{housingLocation?.name}}"/>
+    </section>
     <section class="listing-description">
       <h2 class="listing-heading">{{housingLocation?.name}}</h2>
       <p class="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
@@ -43,7 +45,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     </section>
   </article>
 `,
-  styleUrl: './details.component.css'
+  styleUrls: ['./details.component.css' ,'../core/shared.styles.css']
 })
 
 export class DetailsComponent {
