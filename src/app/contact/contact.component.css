@@ -1,3 +1,28 @@
+.notification {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+
+#message {
+  width: 100%; /* Szerokość dopasowana do kontenera */
+  height: auto; /* Automatyczna wysokość */
+  padding: 10px; /* Odstęp od krawędzi */
+  resize: vertical; /* Możliwość zmiany wysokości przez użytkownika */
+  box-sizing: border-box; /* Uwzględnia padding w całkowitej szerokości/wysokości */
+  border: 1px solid #ccc; /* Lekki obrys dla lepszego wyglądu */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  font-size: 1rem; /* Dopasowanie wielkości czcionki */
+}
+
+
+
 section {
   display: flex;
   flex-direction: column;
@@ -55,12 +80,14 @@ section {
   label, input {
     display: block;
   }
+
   label {
     color: var(--secondary-color);
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12pt;
   }
+
   input {
     font-size: 16pt;
     margin-bottom: 15px;
@@ -77,4 +104,5 @@ section {
       height: 400px;
     }
   }
+
 

@@ -11,11 +11,11 @@ import { RouterModule } from '@angular/router';
   <main>
     <section class="container">
     <header class="brand-name">
-      <a [routerLink]="['/']" class="link-class">
+      <!-- <a [routerLink]="['/']" class="link-class"> -->
           <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-      </a>
+      <!-- </a> -->
       <nav class="menu">
-        <a [routerLink]="['/text1']" class="menu-item">Events</a>
+        <a [routerLink]="['/']" class="menu-item">Events</a>
         <a [routerLink]="['/text2']" class="menu-item">Blog</a>
         <a [routerLink]="['/contact']" class="menu-item">Contact</a>
       </nav>

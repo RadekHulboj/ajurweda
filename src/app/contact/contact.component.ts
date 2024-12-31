@@ -24,7 +24,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     <section class="listing-apply">
       <form [formGroup]="applyForm" (submit)="submitApplication()">
         <label for="first-name">First Name</label>
-        <input id="first-name" type="text" formControlName="    ">
+        <input id="first-name" type="text" formControlName="firstName">
 
         <label for="last-name">Last Name</label>
         <input id="last-name" type="text" formControlName="lastName">
@@ -33,11 +33,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
         <input id="email" type="email" formControlName="email">
 
         <label for="message">Message</label>
-        <input id="message" type="text" formControlName="message">
+        <textarea id="message" formControlName="message" rows="4"></textarea>
+
 
         <button type="submit" class="primary">Apply now</button>
 
       </form>
+    </section>
+    <section class="notification" *ngIf="successMessage">
+      <p>{{ successMessage }}</p>
     </section>
   </article>
 `,
@@ -45,7 +49,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 
 export class ContactComponent {
-
+  successMessage = "";
   // route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
   // housingLocation: HousingLocation | undefined;
@@ -58,7 +62,6 @@ export class ContactComponent {
   });
 
   constructor() {
-    
   }
 
   submitApplication() {
@@ -68,6 +71,13 @@ export class ContactComponent {
       this.applyForm.value.email ?? '',
       this.applyForm.value.message ?? ''
     );
+    this.applyForm.reset();
+
+    // Ustawienie komunikatu
+    this.successMessage = 'Your email has been sent successfully!';
+    setTimeout(() => {
+      this.successMessage = '';
+    }, 3000);
   }
 
 }
