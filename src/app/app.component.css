@@ -1,7 +1,7 @@
 .link-class {
   display: block; /* Zapewni, że element zajmie całą szerokość, jeśli chcesz */
   height:70px;
-  margin: 0 auto; /* Opcjonalne: centruj element */
+  /* margin: 0 auto;Opcjonalne: centruj element */
   text-align: center; /* Opcjonalne: centruj zawartość w poziomie */
 }
 
@@ -19,7 +19,7 @@ header.brand-name {
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 10px 100px;
   text-align: left;
   margin-left: 10;
