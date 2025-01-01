@@ -1,9 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { ActivatedRoute } from '@angular/router';
 import { HousingService } from '../core/housing.service';
-// import { HousingLocation } from '../core/housinglocation';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -23,21 +21,30 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     </section>
     <section class="listing-apply">
       <form [formGroup]="applyForm" (submit)="submitApplication()">
-        <label for="first-name">First Name</label>
-        <input id="first-name" type="text" formControlName="firstName">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input id="first-name" type="text" formControlName="firstName">
+        </div>
 
-        <label for="last-name">Last Name</label>
-        <input id="last-name" type="text" formControlName="lastName">
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input id="last-name" type="text" formControlName="lastName">
+        </div>
 
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email">
+          <div *ngIf="applyForm.get('email')?.invalid && applyForm.get('email')?.touched" class="error">
+            <small>Please enter a valid email address.</small>
+          </div>
+        </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" formControlName="message" rows="4"></textarea>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" rows="4"></textarea>
+        </div>
 
-
-        <button type="submit" class="primary">Apply now</button>
-
+        <button type="submit" class="primary" [disabled]="applyForm.invalid">Apply now</button>
       </form>
     </section>
     <section class="notification" *ngIf="successMessage">
@@ -45,39 +52,36 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
     </section>
   </article>
 `,
-  styleUrls: ['./contact.component.css' ,'../core/shared.styles.css']
+  styleUrls: ['./contact.component.css', '../core/shared.styles.css']
 })
-
 export class ContactComponent {
   successMessage = "";
-  // route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
-  // housingLocation: HousingLocation | undefined;
 
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
-    email: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('')
   });
 
-  constructor() {
-  }
+  constructor() {}
 
   submitApplication() {
-    this.housingService.submitApplication(
-      this.applyForm.value.firstName ?? '',
-      this.applyForm.value.lastName ?? '',
-      this.applyForm.value.email ?? '',
-      this.applyForm.value.message ?? ''
-    );
-    this.applyForm.reset();
-
-    // Ustawienie komunikatu
-    this.successMessage = 'Your email has been sent successfully!';
-    setTimeout(() => {
-      this.successMessage = '';
-    }, 3000);
+    if (this.applyForm.valid) {
+      this.housingService.submitApplication(
+        this.applyForm.value.firstName ?? '',
+        this.applyForm.value.lastName ?? '',
+        this.applyForm.value.email ?? '',
+        this.applyForm.value.message ?? ''
+      );
+      this.applyForm.reset();
+  
+      // Ustawienie komunikatu
+      this.successMessage = 'Your email has been sent successfully!';
+      setTimeout(() => {
+        this.successMessage = '';
+      }, 3000);
+    }
   }
-
 }
