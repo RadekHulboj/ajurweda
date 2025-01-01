@@ -22,7 +22,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       <p class="listing-location">{{housingLocation?.city}}, {{housingLocation?.state}}</p>
     </section>
     <section class="listing-features">
-      <h2 class="section-heading">About this housing location</h2>
+      <h2 class="section-heading">Discovering the Beauty of This Idea</h2>
       <div [innerHTML]="housingLocation?.article"></div>
     </section>
   </article>
