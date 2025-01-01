@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
   <main>
     <section class="container">
     <header class="brand-name">
+    <a [routerLink]="['/']">
       <img class="brand-logo" src="/assets/ajur1.svg" alt="logo" aria-hidden="true">
       <img class="brand-logo" src="/assets/ajur2.svg" alt="logo" aria-hidden="true">
       <img class="brand-logo" src="/assets/ajur3.svg" alt="logo" aria-hidden="true">
@@ -18,8 +19,9 @@ import { RouterModule } from '@angular/router';
       <img class="brand-logo" src="/assets/ajur5.svg" alt="logo" aria-hidden="true">
       <img class="brand-logo" src="/assets/ajur6.svg" alt="logo" aria-hidden="true">
       <img class="brand-logo" src="/assets/ajur7.svg" alt="logo" aria-hidden="true">
+    </a>
       <nav class="menu">
-        <a [routerLink]="['/']" class="menu-item">Events</a>
+        <a [routerLink]="['/events']" class="menu-item">Events</a>
         <a [routerLink]="['/text2']" class="menu-item">Blog</a>
         <a [routerLink]="['/contact']" class="menu-item">Contact</a>
       </nav>

@@ -95,6 +95,15 @@
             "state": "OR",
             "photo": "../../assets/photos/12.png",
              "article": ""
+        },
+        {
+            "id": 12,
+            "name": "Welcome to Ayurveda",
+            "city": "Wilczyce",
+            "state": "DL",
+            "photo": "../../assets/photos/village.png",
+            "article": "<article>\n    <h1>Welcome to the World of Ayurveda</h1>\n    <p>Ayurveda, the ancient science of life, offers a holistic approach to achieving harmony between the mind, body, and spirit. Rooted in thousands of years of tradition, it focuses on natural remedies, balanced living, and the connection between humans and nature.</p>\n    <p>On this website, you’ll find insights into Ayurvedic principles, personalized wellness tips, and ways to incorporate herbs, oils, and practices into your daily routine. Whether you're seeking balance, vitality, or inner peace, Ayurveda provides the tools to transform your lifestyle.</p>\n    <p>Explore the timeless wisdom of Ayurveda and embark on a journey toward health and harmony. Together, we can reconnect with nature and nurture a life of balance and well-being.</p>\n</article>"
         }
+        
     ]
 }
