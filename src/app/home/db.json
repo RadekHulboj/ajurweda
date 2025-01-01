@@ -6,9 +6,7 @@
             "city": "Chicago",
             "state": "IL",
             "photo": "../../assets/photos/1.png",
-            "availableUnits": 4,
-            "wifi": true,
-            "laundry": true
+            "article": "<article>\n    <h1>Harmony of the elements</h1>\n    <p>The elements of nature—earth, water, fire, air, and space—exist in a delicate harmony that shapes life on our planet. This balance is mirrored in our bodies, where the same forces must remain in equilibrium for health and well-being.</p>\n    <p>Herbs serve as a bridge between the elements and our own internal balance. Plants like basil, which thrives under the sun and water, or mint, which grows in rich soil, carry the essence of these elements into our lives. By incorporating these herbs into our diets and routines, we align ourselves with nature's rhythm.</p>\n    <p>Whether through soothing teas, aromatic oils, or culinary spices, herbs embody the harmony of the elements, inviting us to reconnect with the natural world.</p>\n</article>"
         },
         {
             "id": 1,
@@ -16,9 +14,7 @@
             "city": "Santa Monica",
             "state": "CA",
             "photo": "../../assets/photos/2.png",
-            "availableUnits": 0,
-            "wifi": false,
-            "laundry": true
+            "article": "<article>\n  <h1>Nature's Balance in Herbs</h1>\n  <p>Herbs have played a vital role in the delicate balance of nature for centuries. These unassuming plants, often found growing wild in fields and forests, hold the secrets to harmony within ecosystems and the human body alike.</p>\n  <p>Herbs are not just a source of flavor and aroma in our kitchens. They serve as powerful healers, drawing upon their innate properties to support health and vitality. From the soothing effects of chamomile to the invigorating properties of peppermint, these plants echo the rhythms of nature.</p>\n  <p>In gardens and wild spaces, herbs contribute to biodiversity. They attract pollinators like bees and butterflies, essential players in our planet's ecological balance. Lavender, thyme, and oregano are not only culinary delights but also vital resources for these crucial insects.</p>\n  <p>The balance herbs offer extends to their medicinal properties. Many traditional healing systems, like Ayurveda and Traditional Chinese Medicine, emphasize herbs' ability to restore balance in the human body. Whether through teas, tinctures, or essential oils, herbs bridge the gap between natural wellness and modern science.</p>\n  <p>In embracing herbs, we connect to a timeless harmony rooted in nature. Let us nurture this bond, ensuring that these small but mighty plants continue to inspire and heal for generations to come.</p>\n</article>"
         },
         {
             "id": 2,
@@ -26,9 +22,7 @@
             "city": "Juneau",
             "state": "AK",
             "photo": "../../assets/photos/3.png",
-            "availableUnits": 1,
-            "wifi": false,
-            "laundry": false
+            "article": "<article>\n    <h1>Calm mind, pure soul</h1>\n    <p>In the chaos of modern life, herbs like lavender and chamomile offer a sanctuary for the mind. Their calming properties have been cherished for generations, soothing anxiety and fostering restful sleep.</p>\n    <p>The purity of a calm mind is reflected in a clear, unburdened soul. Just as sage purifies the air with its fragrant smoke, herbs cleanse our inner world, helping us let go of stress and negativity.</p>\n    <p>A calm mind and pure soul go hand in hand, nurtured by the timeless wisdom of herbal remedies.</p>\n</article>"
         },
         {
             "id": 3,
@@ -36,9 +30,7 @@
             "city": "Chicago",
             "state": "IL",
             "photo": "../../assets/photos/4.png",
-            "availableUnits": 1,
-            "wifi": true,
-            "laundry": false
+            "article": "<article>\n    <h1>Healing through natural remedies</h1>\n    <p>Nature offers a pharmacy filled with healing potential. Herbs like turmeric, with its potent anti-inflammatory properties, and garlic, known for its immune-boosting effects, demonstrate how natural remedies can support our health.</p>\n    <p>Unlike synthetic solutions, natural remedies align with our bodies' innate wisdom, offering gentle yet powerful healing. From ancient times to the present, humanity has relied on herbs to restore balance and vitality.</p>\n    <p>Healing through natural remedies reminds us that wellness is not found in isolation but in partnership with the earth.</p>\n</article>"
         },
         {
             "id": 4,
@@ -46,9 +38,7 @@
             "city": "Gary",
             "state": "IN",
             "photo": "../../assets/photos/5.png",
-            "availableUnits": 1,
-            "wifi": true,
-            "laundry": false
+            "article": "<article>\n    <h1>Ayurvedic wisdom for life</h1>\n    <p>Ayurveda, the \"science of life,\" emphasizes balance in every aspect of existence. Herbs play a central role in this ancient system, addressing the unique needs of each individual based on their dosha.</p>\n    <p>Whether cooling herbs like coriander for fiery Pitta types or warming spices like ginger for cold-natured Kapha individuals, Ayurveda tailors its approach to nurture harmony.</p>\n    <p>Ayurvedic wisdom teaches us to listen to our bodies and honor the rhythms of nature, guiding us toward a vibrant, balanced life.</p>\n</article>"
         },
         {
             "id": 5,
@@ -56,9 +46,7 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "../../assets/photos/16.png",
-            "availableUnits": 2,
-            "wifi": true,
-            "laundry": true
+            "article": "<article>\n    <h1>Serenity in every breath</h1>\n    <p>The simple act of breathing connects us to life itself. Herbs like eucalyptus and peppermint enhance this connection, opening airways and invigorating the senses.</p>\n    <p>Serenity comes not from escaping life’s challenges but from embracing them with calm and clarity. Herbal teas, essential oils, and natural remedies support this journey, offering moments of peace in every breath.</p>\n    <p>Let the calming essence of herbs guide you toward serenity, one breath at a time.</p>\n</article>"
         },
         {
             "id": 6,
@@ -66,9 +54,7 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "../../assets/photos/7.png",
-            "availableUnits": 5,
-            "wifi": true,
-            "laundry": true
+            "article": "<article>\n    <h1>Herbal paths to health</h1>\n    <p>The journey to health often begins with small, intentional steps. Herbs like dandelion, renowned for its detoxifying properties, or ginger, celebrated for its digestive support, provide a roadmap to wellness.</p>\n    <p>Herbal paths to health remind us that healing is a journey, not a destination. Each cup of tea or pinch of spice is a step closer to balance and vitality.</p>\n    <p>Through herbs, we walk a path shaped by nature’s wisdom, leading us to a healthier, happier life.</p>\n</article>"
         },
         {
             "id": 7,
@@ -76,9 +62,7 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "../../assets/photos/8.png",
-            "availableUnits": 2,
-            "wifi": true,
-            "laundry": true
+             "article": ""
         },
         {
             "id": 8,
@@ -86,9 +70,7 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "../../assets/photos/9.png",
-            "availableUnits": 10,
-            "wifi": false,
-            "laundry": false
+             "article": ""
         },
         {
             "id": 9,
@@ -96,9 +78,7 @@
             "city": "Portland",
             "state": "OR",
             "photo": "../../assets/photos/10.png",
-            "availableUnits": 6,
-            "wifi": true,
-            "laundry": true
+             "article": ""
         },
         {
             "id": 10,
@@ -106,9 +86,7 @@
             "city": "Portland",
             "state": "OR",
             "photo": "../../assets/photos/11.png",
-            "availableUnits": 6,
-            "wifi": true,
-            "laundry": true
+             "article": ""
         },
         {
             "id": 11,
@@ -116,9 +94,7 @@
             "city": "Portland",
             "state": "OR",
             "photo": "../../assets/photos/12.png",
-            "availableUnits": 6,
-            "wifi": true,
-            "laundry": true
+             "article": ""
         }
     ]
 }
