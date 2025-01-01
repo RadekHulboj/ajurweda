@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
       <img class="brand-logo" src="/assets/ajur7.svg" alt="logo" aria-hidden="true">
     </a>
       <nav class="menu">
+        <a [routerLink]="['/']" class="menu-item">Home</a>
         <a [routerLink]="['/events']" class="menu-item">Events</a>
         <a [routerLink]="['/text2']" class="menu-item">Blog</a>
         <a [routerLink]="['/contact']" class="menu-item">Contact</a>
