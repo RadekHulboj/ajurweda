@@ -23,11 +23,12 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
           <img class="brand-logo" src="/assets/ajur7.svg" alt="logo" aria-hidden="true">
         </a>
         <nav class="menu">
-          <a [routerLink]="['/']" class="menu-item">{{ 'MENU.HOME' | translate }}</a>
-          <a [routerLink]="['/events']" class="menu-item">{{ 'MENU.EVENTS' | translate }}</a>
-          <a [routerLink]="['/text2']" class="menu-item">{{ 'MENU.BLOG' | translate }}</a>
-          <a [routerLink]="['/contact']" class="menu-item">{{ 'MENU.CONTACT' | translate }}</a>
+          <a [routerLink]="['/']" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'MENU.HOME' | translate }}</a>
+          <a [routerLink]="['/events']" class="menu-item" routerLinkActive="active">{{ 'MENU.EVENTS' | translate }}</a>
+          <a [routerLink]="['/text2']" class="menu-item" routerLinkActive="active">{{ 'MENU.BLOG' | translate }}</a>
+          <a [routerLink]="['/contact']" class="menu-item" routerLinkActive="active">{{ 'MENU.CONTACT' | translate }}</a>
         </nav>
+
         <div class="language-selector">
           <button [class.active]="currentLang === 'en'" (click)="changeLanguage('en')">En</button>
           <button [class.active]="currentLang === 'pl'" (click)="changeLanguage('pl')">Pl</button>
