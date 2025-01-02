@@ -1,3 +1,35 @@
+.language-selector {
+  margin-left: 20px; /* Odstęp z lewej strony */
+  margin-right: 20px; /* Odstęp z prawej strony */
+  display: flex; /* Układ w poziomie */
+  gap: 10px; /* Odstęp między przyciskami */
+  align-items: center; /* Wyrównanie przycisków do środka */
+}
+
+.language-selector button {
+  background-color: transparent; /* Tło przezroczyste */
+  border: 1px solid #605DC8; /* Niebieska ramka */
+  color: #605DC8; /* Niebieski kolor tekstu */
+  padding: 5px 10px; /* Wewnętrzny odstęp w przyciskach */
+  font-size: 12px; /* Rozmiar czcionki */
+  cursor: pointer; /* Zmiana kursora na wskaźnik */
+  border-radius: 5px; /* Zaokrąglone rogi */
+  transition: all 0.3s ease; /* Płynna zmiana efektów */
+}
+
+.language-selector button:hover {
+  background-color: #007BFF; /* Niebieskie tło po najechaniu */
+  color: white; /* Zmiana koloru tekstu na biały po najechaniu */
+}
+
+.language-selector button:focus, /* Stan po kliknięciu */
+.language-selector button.active { /* Dla aktywnego przycisku */
+  background-color: #0056b3; /* Przyciemniony niebieski kolor */
+  color: white; /* Biały tekst */
+  border-color: #004085; /* Ciemniejsza ramka */
+}
+
+
 .link-class {
   display: block; /* Zapewni, że element zajmie całą szerokość, jeśli chcesz */
   height:70px;
