@@ -25,7 +25,7 @@ import { HousingService } from '../core/housing.service';
     </section>
   </section>
   `,
-  styleUrls: ['./home.component.css', '../core/shared.styles.css']
+  styleUrls: ['./events.component.css', '../core/shared.styles.css']
 })
 
 export class HomeComponent {
