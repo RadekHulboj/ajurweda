@@ -4,6 +4,7 @@ import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EditorComponent } from './editor/editor.component';
+import { MsalGuard } from '@azure/msal-angular'; // Upewnij się, że importujesz MsalGuard
 
 const routeConfig: Routes = [
     {
@@ -29,7 +30,8 @@ const routeConfig: Routes = [
     {
       path: 'editor',
       component: EditorComponent,
-      title: 'Admin page'
+      title: 'Admin page',
+      canActivate: [MsalGuard], // Ochrona trasy
     }
 
   ];
