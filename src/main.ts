@@ -66,5 +66,10 @@ bootstrapApplication(AppComponent, {
       },
     }).providers || [], // Rejestracja dostawców TranslateModule
     MsalModule, // Rejestracja MsalModule bez forRoot
+    MsalGuard, //
+    {
+      provide: 'MSAL_GUARD_CONFIG',
+      useValue: msalGuardConfig, // Konfiguracja dla MsalGuard
+    },
   ],
 }).catch((err) => console.error(err));
