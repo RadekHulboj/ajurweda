@@ -3,6 +3,7 @@ import { HomeComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { EditorComponent } from './editor/editor.component';
 
 const routeConfig: Routes = [
     {
@@ -24,7 +25,13 @@ const routeConfig: Routes = [
       path: 'contact',
       component: ContactComponent,
       title: 'Home addreses'
+    },
+    {
+      path: 'editor',
+      component: EditorComponent,
+      title: 'Admin page'
     }
+
   ];
   
   export default routeConfig;

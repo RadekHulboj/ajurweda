@@ -25,7 +25,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
         <nav class="menu">
           <a [routerLink]="['/']" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'MENU.HOME' | translate }}</a>
           <a [routerLink]="['/events']" class="menu-item" routerLinkActive="active">{{ 'MENU.EVENTS' | translate }}</a>
-          <a [routerLink]="['/text2']" class="menu-item" routerLinkActive="active">{{ 'MENU.BLOG' | translate }}</a>
+          <a [routerLink]="['/editor']" class="menu-item" routerLinkActive="active">{{ 'MENU.EDITOR' | translate }}</a>
           <a [routerLink]="['/contact']" class="menu-item" routerLinkActive="active">{{ 'MENU.CONTACT' | translate }}</a>
         </nav>
 

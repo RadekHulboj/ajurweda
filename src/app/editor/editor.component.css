@@ -1,0 +1,59 @@
+section {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.construction-section {
+  background-color: #605DC8; /* Background color for rectangle */
+  color: white; /* Adjust text color to be readable on dark background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.construction-text {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: shake 0.8s ease infinite alternate;
+  color: white; /* Ensure the main text is white */
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #f0f0f0; /* Light color for the message text */
+  margin-top: 15px;
+}
+
+/* Animation for shaking effect */
+@keyframes shake {
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
