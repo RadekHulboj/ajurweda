@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  angular-app:
+    build:
+      context: ../../ajurweda
+      dockerfile: ./docker/Dockerfile.angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ../../ajurweda:/usr/src/app
+    command: >
+      sh -c "npm install &&
+             ng serve --host 0.0.0.0 --disable-host-check"
+
+  json-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.json-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./db.json:/app/db.json
+    command: npx json-server --watch /app/db.json --port 3000
+

@@ -1,0 +1,22 @@
+FROM node:20-alpine
+
+# Ustaw katalog roboczy
+WORKDIR /usr/src/app
+
+# Kopiuj package.json i package-lock.json do obrazu
+COPY ../package*.json ./
+
+# Instaluj Angular CLI
+RUN npm install -g @angular/cli@17
+
+# Instaluj zależności projektu
+RUN npm install
+
+# Kopiuj cały projekt do obrazu
+COPY ../ ./
+
+# Otwórz port aplikacji Angular
+EXPOSE 4200
+
+# Domyślne polecenie uruchamiające aplikację
+CMD ["ng", "serve", "--host", "0.0.0.0"]

@@ -9,9 +9,7 @@ import { PublicClientApplication, IPublicClientApplication, InteractionType } fr
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { EditorComponent } from './app/editor/editor.component';
-import  routeConfig  from './app/routes';
-
+import routeConfig from './app/routes';
 
 // Niestandardowy loader tłumaczeń
 @Injectable({ providedIn: 'root' })
@@ -26,13 +24,13 @@ export class CustomTranslateLoader implements TranslateLoader {
 // Konfiguracja MSAL
 const msalConfig = {
   auth: {
-    clientId: 'YOUR_CLIENT_ID',  // ID aplikacji z Azure
-    authority: 'https://login.microsoftonline.com/YOUR_TENANT_ID', // Tenant ID
-    redirectUri: 'http://localhost:4200', // URI przekierowania
+    clientId: 'YOUR_CLIENT_ID',
+    authority: 'https://login.microsoftonline.com/YOUR_TENANT_ID',
+    redirectUri: 'http://localhost:4200',
   },
   cache: {
-    cacheLocation: 'localStorage', // Możesz wybrać sessionStorage lub localStorage
-    storeAuthStateInCookie: true, // Umożliwia obsługę cookies w IE
+    cacheLocation: 'localStorage',
+    storeAuthStateInCookie: true,
   }
 };
 
@@ -40,36 +38,32 @@ const msalInstance: IPublicClientApplication = new PublicClientApplication(msalC
 
 // Konfiguracja MsalGuard
 const msalGuardConfig = {
-  interactionType: InteractionType.Redirect, // Używamy InteractionType.Redirect z wyliczenia
+  interactionType: InteractionType.Redirect,
   authRequest: {
     scopes: ['user.read'],
   },
-};
-
-// Konfiguracja MsalInterceptor
-const msalInterceptorConfig = {
-  interactionType: InteractionType.Redirect, // Używamy InteractionType.Redirect z wyliczenia
-  protectedResourceMap: new Map([
-    ['https://graph.microsoft.com/v1.0/me', ['user.read']],
-  ])
 };
 
 // Konfiguracja aplikacji
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routeConfig),
-    provideHttpClient(withInterceptorsFromDi()), // Nowy sposób konfiguracji HttpClient
+    provideHttpClient(withInterceptorsFromDi()),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useClass: CustomTranslateLoader,
       },
-    }).providers || [], // Rejestracja dostawców TranslateModule
-    MsalModule, // Rejestracja MsalModule bez forRoot
-    MsalGuard, //
+    }).providers || [],
+    MsalModule,
+    {
+      provide: 'MSAL_INSTANCE',
+      useValue: msalInstance,  // Dostarczamy instancję MSAL
+    },
     {
       provide: 'MSAL_GUARD_CONFIG',
-      useValue: msalGuardConfig, // Konfiguracja dla MsalGuard
+      useValue: msalGuardConfig,  // Dostarczamy konfigurację dla MSAL Guard
     },
+    MsalGuard,  // Rejestrujemy MsalGuard
   ],
 }).catch((err) => console.error(err));

@@ -1,0 +1,11 @@
+FROM node:20-alpine
+
+# Ustaw katalog roboczy
+WORKDIR /app
+
+# Instaluj JSON Server
+RUN npm install -g json-server
+
+# Otwórz port JSON Server
+EXPOSE 3000
+
