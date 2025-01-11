@@ -7,8 +7,10 @@ import { HousingLocation } from './housinglocation';
 
 export class HousingService {
   
-  readonly url = 'http://localhost:3000/locations';
+  // readonly url = 'http://localhost:3000/locations';
+  readonly url = 'http://localhost:8080/api/locations';
   
+
   constructor() { }
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
