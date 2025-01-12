@@ -1,6 +1,6 @@
 DONE 1) springboot replace db.json to h2
 DONE 1.5) Merge backend with fronted   
-     1.6) docker compose for new backend
+DONE 1.6) docker compose for new backend
      2) add MSAL for editor page Azure ConectID
      3) add Azure KeyVault for keeping secretes (for google.password)
      4) kuebernetes
@@ -10,6 +10,9 @@ DONE 1.5) Merge backend with fronted
 
 docker build -f ./Dockerfile.angular -t angular-app ../../ajurweda
 docker build -f ./Dockerfile.json-server -t json-server ../../ajurweda
+
+for Springboot backend
+radek@radek-B660M-DS3H-AX-DDR4:~/Projects/hulboj/ajurweda/docker$ docker-compose -f docker-compose-springboot.yml up
 
 MSAL Angular example
  
