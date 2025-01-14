@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HousingService } from '../core/housing.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -20,7 +21,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
       </ul>
     </section>
     <section class="listing-apply">
-      <form [formGroup]="applyForm" (submit)="submitApplication()">
+      <form [formGroup]="applyForm" (ngSubmit)="submitApplication()">
         <div class="form-group">
           <label for="first-name">First Name</label>
           <input id="first-name" type="text" formControlName="firstName">
@@ -51,7 +52,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
       <p>{{ successMessage }}</p>
     </section>
   </article>
-`,
+  `,
   styleUrls: ['./contact.component.css', '../core/shared.styles.css']
 })
 export class ContactComponent {
@@ -59,29 +60,33 @@ export class ContactComponent {
   housingService = inject(HousingService);
 
   applyForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('')
+    message: new FormControl('', [Validators.required])
   });
 
   constructor() {}
 
+  
   submitApplication() {
     if (this.applyForm.valid) {
-      this.housingService.submitApplication(
-        this.applyForm.value.firstName ?? '',
-        this.applyForm.value.lastName ?? '',
-        this.applyForm.value.email ?? '',
-        this.applyForm.value.message ?? ''
-      );
-      this.applyForm.reset();
-  
-      // Ustawienie komunikatu
-      this.successMessage = 'Your email has been sent successfully!';
-      setTimeout(() => {
-        this.successMessage = '';
-      }, 3000);
+      const { firstName, lastName, email, message } = this.applyForm.value;
+
+      this.housingService
+        .submitApplication(firstName ?? '', lastName ?? '', email ?? '', message ?? '')
+        .subscribe({
+          next: (responseMessage:any) => {
+              this.successMessage = JSON.stringify(responseMessage.message);
+            this.applyForm.reset();
+            setTimeout(() => (this.successMessage = ''), 3000);
+          },
+          error: (error) => {
+            this.successMessage = 'An error occurred. Please try again.';
+            console.error('Error:', error);
+            setTimeout(() => (this.successMessage = ''), 3000);
+          }
+        });
     }
   }
 }

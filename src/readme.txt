@@ -1,9 +1,10 @@
-DONE 1) springboot replace db.json to h2
-DONE 1.5) Merge backend with fronted   
-DONE 1.6) docker compose for new backend
-     2) add MSAL for editor page Azure ConectID
-     3) add Azure KeyVault for keeping secretes (for google.password)
-     4) kuebernetes
+DONE   1) springboot replace db.json to h2
+DONE   1.5) Merge backend with fronted   
+DONE   1.6) docker compose for new backend
+       3) add Azure KeyVault for keeping secretes (for google.password)
+       4) kuebernetes
+      80) Bug environment variable for email do not work only for email ??? see ayurveda.azure.email.password=
+REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 
 
 
