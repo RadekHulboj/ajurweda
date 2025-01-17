@@ -18,5 +18,4 @@ services:
     ports:
       - "8080:8080"
     environment:
-      # Dodaj zmienne środowiskowe, jeśli są wymagane w aplikacji Spring Boot
       SPRING_PROFILES_ACTIVE: "prod"
