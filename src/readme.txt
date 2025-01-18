@@ -9,8 +9,16 @@ DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent e
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 
 
+//BACKEND
+eval $(minikube docker-env)
+eval $(minikube docker-env --unset)
+docker build -f docker/Dockerfile -t ayurveda-server .
+// na to stracilem w huj czasu
+docker save ayurveda-server -o ayurveda-server.tar
+minikube image load ayurveda-server.tar
 
 
+//FRONTED
 docker build -f ./Dockerfile.angular -t angular-app ../../ajurweda
 docker build -f ./Dockerfile.json-server -t json-server ../../ajurweda
 
