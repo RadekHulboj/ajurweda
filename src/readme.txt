@@ -9,20 +9,27 @@ DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent e
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 
 
+// !!!!!!!!!!!!!!!!!!!!
+ kubectl exec -it pod/angular-app-794665bc94-rt6k6 -- wget -qO- http://ayurveda-server-service:8080/api/locations
+
+
 //BACKEND
 eval $(minikube docker-env)
 eval $(minikube docker-env --unset)
 docker build -f docker/Dockerfile -t ayurveda-server .
-
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!! na to stracilem w huj czasu !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 docker save ayurveda-server -o ayurveda-server.tar
 minikube image load ayurveda-server.tar
 minikube ssh -- docker images
 
 //FRONTED
-docker build -f ./Dockerfile.angular -t angular-app ../../ajurweda
-docker build -f ./Dockerfile.json-server -t json-server ../../ajurweda
+
+docker build -f docker/Dockerfile.angular -t angular-app .
+docker save angular-app -o angular-app.tar
+minikube image load angular-app.tar
+minikube ssh -- docker images
+
+//docker build -f ./Dockerfile.angular -t angular-app ../../ajurweda
+//docker build -f ./Dockerfile.json-server -t json-server ../../ajurweda
 
 for Springboot backend
 radek@radek-B660M-DS3H-AX-DDR4:~/Projects/hulboj/ajurweda/docker$ docker-compose -f docker-compose-springboot.yml up

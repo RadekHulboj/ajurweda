@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "http://ayurveda-server-service:8080",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }

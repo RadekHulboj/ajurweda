@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HousingLocation } from './housinglocation';
 import { HttpClient } from '@angular/common/http';  
 import { Observable } from 'rxjs'; 
+import { environment } from '../environments/environment'; // Importuj environment
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,9 @@ import { Observable } from 'rxjs';
 
 export class HousingService {
   
-  readonly url = 'http://localhost:8080/api/locations';
-  readonly contactUrl = 'http://localhost:8080/api/contact';  
+  readonly url = `${environment.apiUrl}/locations`;
+  readonly contactUrl = `${environment.apiUrl}/contact`;
+
   
   constructor(private http: HttpClient) { }
 
