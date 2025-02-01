@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -52,8 +52,27 @@ export class AppComponent {
     this.translate.use('en'); // Aktywny język
   }
 
+  ngOnInit() {
+    this.adjustContentPadding();
+  }
+
   changeLanguage(lang: string) {
     this.translate.use(lang); // Zmiana języka
     this.currentLang = lang; // Ustawienie aktywnego języka
   }
+
+  @HostListener('window:resize')
+  adjustContentPadding() {
+    const header = document.querySelector('header.brand-name') as HTMLElement;
+    const content = document.querySelector('section.content');
+    if (header && content) {
+      const headerHeight = header.offsetHeight;
+      // Obliczamy sumę headerHeight i 20px
+      const adjustedHeight = headerHeight + 20;
+      (content as HTMLElement).style.marginTop = `${adjustedHeight}px`;
+    }
+  }
+  
+  
+
 }

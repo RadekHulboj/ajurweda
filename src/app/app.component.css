@@ -38,11 +38,12 @@
 }
 
 section.content {
-  margin-top: 20px; /* Dopasuj do wysokości nagłówka */
+  margin-top: 0px; 
 }
 
 header.brand-name {
   position: fixed; /* Ustawienie pozycji na stałą */
+  flex-wrap: wrap;
   top: 0; /* Przyczepienie do górnej krawędzi */
   width: 100%; /* Nagłówek zajmuje pełną szerokość */
   z-index: 1000; /* Zapewnia, że nagłówek będzie ponad innymi elementami */
