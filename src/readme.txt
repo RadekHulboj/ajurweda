@@ -16,11 +16,8 @@ REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 2)
 kubectl get ingress
 kubectl logs -n ingress-nginx <nginx-ingress-pod-name>
-kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80
+kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80q
 kubectl describe ingress ayurveda-ingress
-
-
-
 
 
 // !!!!!!!!!!!!!!!!!!!!
