@@ -2,11 +2,25 @@ DONE    1) springboot replace db.json to h2
 DONE    1.5) Merge backend with fronted   
 DONE    1.6) docker compose for new backend
 DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent email from contact page
-        4) kuebernetes
+DONE    4) kuebernetes + ingress
+      4.5) helm
+      4.7) make angular production on image
        75) clean code remove housing names 
        76) css, photo store in db
        80) Bug environment variable for email do not work only for email ??? see ayurveda.azure.email.password
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
+
+
+// ingress
+1) chatgot installacja ingress na kubernetes
+2)
+kubectl get ingress
+kubectl logs -n ingress-nginx <nginx-ingress-pod-name>
+kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80
+kubectl describe ingress ayurveda-ingress
+
+
+
 
 
 // !!!!!!!!!!!!!!!!!!!!
