@@ -3,6 +3,8 @@ DONE    1.5) Merge backend with fronted
 DONE    1.6) docker compose for new backend
 DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent email from contact page
 DONE    4) kuebernetes + ingress
+      4.4) not ok -> kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80 , ok -> kubectl port-forward service/angular-app-service 4200:4200 
+           dla sent email 
       4.5) helm
       4.7) make angular production on image
        75) clean code remove housing names 
@@ -33,7 +35,7 @@ minikube image load ayurveda-server.tar
 minikube ssh -- docker images
 
 //FRONTED
-
+kubectl port-forward service/angular-app-service 4200:4200
 docker build -f docker/Dockerfile.angular -t angular-app .
 docker save angular-app -o angular-app.tar
 minikube image load angular-app.tar
