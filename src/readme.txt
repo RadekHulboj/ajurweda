@@ -18,12 +18,15 @@ REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 2)
 kubectl get ingress
 kubectl logs -n ingress-nginx <nginx-ingress-pod-name>
-kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80
 kubectl describe ingress ayurveda-ingress
 
 
-// !!!!!!!!!!!!!!!!!!!!
- kubectl exec -it pod/angular-app-794665bc94-rt6k6 -- wget -qO- http://ayurveda-server-service:8080/api/locations
+// To bedzie potrzebne do inwestygacji
+//sending email challange on nginx
+kl exec -it pod/ayurveda-server-d57b87474-5mdpv -- curl -X POST http://ayurveda-server-service:8080/api/contact -d '{"firstName": "John", "lastName": "Hulboj", "email": "radek@example.com", "message": "z palca"}' -H "Content-Type: application/json"
+kubectl logs -l app.kubernetes.io/name=ingress-nginx -n ingress-nginx
+
+
 
 
 //BACKEND
@@ -33,6 +36,8 @@ docker build -f docker/Dockerfile -t ayurveda-server .
 docker save ayurveda-server -o ayurveda-server.tar
 minikube image load ayurveda-server.tar
 minikube ssh -- docker images
+kubectl port-forward service/angular-app-service 4200:4200
+ kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80
 
 //FRONTED
 kubectl port-forward service/angular-app-service 4200:4200
