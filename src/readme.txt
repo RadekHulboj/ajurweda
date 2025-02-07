@@ -1,11 +1,10 @@
 DONE    1) springboot replace db.json to h2
-DONE    1.5) Merge backend with fronted   
-DONE    1.6) docker compose for new backend
+DONE  1.5) Merge backend with fronted   
+DONE  1.6) docker compose for new backend
 DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent email from contact page
 DONE    4) kuebernetes + ingress
-      4.4) not ok -> kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80 , ok -> kubectl port-forward service/angular-app-service 4200:4200 
-           dla sent email 
-      4.5) helm
+DONE  4.4) ok-> kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80 (port 4200 chodzi)
+DONE  4.5) helm
       4.7) make angular production on image
        75) clean code remove housing names 
        76) css, photo store in db
@@ -37,7 +36,8 @@ docker save ayurveda-server -o ayurveda-server.tar
 minikube image load ayurveda-server.tar
 minikube ssh -- docker images
 kubectl port-forward service/angular-app-service 4200:4200
- kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80
+kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80
+helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml
 
 //FRONTED
 kubectl port-forward service/angular-app-service 4200:4200
