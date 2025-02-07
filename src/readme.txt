@@ -8,7 +8,7 @@ DONE  4.5) helm
       4.7) make angular production on image
        75) clean code remove housing names 
        76) css, photo store in db
-       80) Bug environment variable for email do not work only for email ??? see ayurveda.azure.email.password
+       80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 
 
