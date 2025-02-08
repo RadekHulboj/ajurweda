@@ -5,7 +5,9 @@ DONE    3) add Azure KeyVault for keeping secretes (for google.password), sent e
 DONE    4) kuebernetes + ingress
 DONE  4.4) ok-> kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80 (port 4200 chodzi)
 DONE  4.5) helm
-      4.7) make angular production on image
+DONE  4.6) Instalacja na Win 11 
+DONE  4.7) make angular production on image
+      4.8) Moblie device look like 
        75) clean code remove housing names 
        76) css, photo store in db
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
@@ -24,7 +26,7 @@ kubectl describe ingress ayurveda-ingress
 //sending email challange on nginx
 kl exec -it pod/ayurveda-server-d57b87474-5mdpv -- curl -X POST http://ayurveda-server-service:8080/api/contact -d '{"firstName": "John", "lastName": "Hulboj", "email": "radek@example.com", "message": "z palca"}' -H "Content-Type: application/json"
 kubectl logs -l app.kubernetes.io/name=ingress-nginx -n ingress-nginx
-
+scp  ../ajurweda/ayurveda-server.tar  radek@192.168.1.11:"C:\\Users\\radek\\ayurveda-server.tar"
 
 
 
@@ -46,8 +48,7 @@ docker save angular-app -o angular-app.tar
 minikube image load angular-app.tar
 minikube ssh -- docker images
 
-//docker build -f ./Dockerfile.angular -t angular-app ../../ajurweda
-//docker build -f ./Dockerfile.json-server -t json-server ../../ajurweda
+
 
 for Springboot backend
 radek@radek-B660M-DS3H-AX-DDR4:~/Projects/hulboj/ajurweda/docker$ docker-compose -f docker-compose-springboot.yml up
