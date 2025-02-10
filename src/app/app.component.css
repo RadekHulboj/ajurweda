@@ -1,61 +1,58 @@
 .language-selector {
-  margin-left: 20px; /* Odstęp z lewej strony */
-  margin-right: 20px; /* Odstęp z prawej strony */
-  display: flex; /* Układ w poziomie */
-  gap: 10px; /* Odstęp między przyciskami */
-  align-items: center; /* Wyrównanie przycisków do środka */
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .language-selector button {
-  background-color: transparent; /* Tło przezroczyste */
-  border: 1px solid #605DC8; /* Niebieska ramka */
-  color: #605DC8; /* Niebieski kolor tekstu */
-  padding: 5px 10px; /* Wewnętrzny odstęp w przyciskach */
-  font-size: 12px; /* Rozmiar czcionki */
-  cursor: pointer; /* Zmiana kursora na wskaźnik */
-  border-radius: 5px; /* Zaokrąglone rogi */
-  transition: all 0.3s ease; /* Płynna zmiana efektów */
+  background-color: transparent;
+  border: 1px solid #605DC8;
+  color: #605DC8;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .language-selector button:hover {
-  background-color: #007BFF; /* Niebieskie tło po najechaniu */
-  color: white; /* Zmiana koloru tekstu na biały po najechaniu */
+  background-color: #007BFF;
+  color: white;
 }
 
-.language-selector button:focus, /* Stan po kliknięciu */
-.language-selector button.active { /* Dla aktywnego przycisku */
-  background-color: #0056b3; /* Przyciemniony niebieski kolor */
-  color: white; /* Biały tekst */
-  border-color: #004085; /* Ciemniejsza ramka */
+.language-selector button:focus,
+.language-selector button.active {
+  background-color: #0056b3;
+  color: white;
+  border-color: #004085;
 }
-
 
 .link-class {
-  display: block; /* Zapewni, że element zajmie całą szerokość, jeśli chcesz */
-  height:70px;
-  /* margin: 0 auto;Opcjonalne: centruj element */
-  text-align: center; /* Opcjonalne: centruj zawartość w poziomie */
+  display: block;
+  height: 70px;
+  text-align: center;
 }
 
 section.content {
-  margin-top: 0px; 
+  margin-top: 0px;
 }
 
 header.brand-name {
-  position: fixed; /* Ustawienie pozycji na stałą */
+  position: fixed;
   flex-wrap: wrap;
-  top: 0; /* Przyczepienie do górnej krawędzi */
-  width: 100%; /* Nagłówek zajmuje pełną szerokość */
-  z-index: 1000; /* Zapewnia, że nagłówek będzie ponad innymi elementami */
-  background-color: white; /* Dodaj tło, aby zakryć przewijaną zawartość */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /*Opcjonalnie: cień dla efektu wizualnego */
-
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 100px;
   text-align: left;
-  margin-left: 10;
+  margin-left: 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -71,33 +68,103 @@ main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  display: block; /* Usuń flex, jeśli był */
+  display: block;
 }
 
 .menu {
-  display: flex; /* Układ menu w poziomie */
-  gap: 50px; /* Odstępy między linkami */
-  margin-left: auto; /* Przepchnij menu do prawej strony */
-  
+  display: flex;
+  gap: 50px;
+  margin-left: auto;
 }
 
 .menu-item {
-  text-decoration: none; /* Usuń podkreślenie linków */
-  color: #605DC8; /* Kolor tekstu linków */
-  font-size: 16px; /* Rozmiar czcionki */
-  font-weight: 500; /* Grubość tekstu */
-  transition: color 0.3s; /* Animacja koloru linków */
+  text-decoration: none;
+  color: #605DC8;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .menu-item:hover {
-  color: #007BFF; /* Kolor linku po najechaniu */
+  color: #007BFF;
 }
 
 .menu-item.active {
   background-color: #e3e3ee;
-  text-decoration: none; /* Usuń podkreślenie linków */
-  color: #605DC8; /* Kolor tekstu linków */
-  font-size: 16px; /* Rozmiar czcionki */
-  font-weight: 500; /* Grubość tekstu */
-  transition: color 0.3s; /* Animacja koloru linków */
+  color: #605DC8;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Stylowanie przycisku hamburgera */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Stylowanie menu mobilnego */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .menu {
+    display: flex !important;
+  }
+}
+
+/* Stylowanie menu mobilnego */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
 }
