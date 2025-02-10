@@ -20,11 +20,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
         <img class="brand-logo" src="/assets/ajur4.svg" alt="logo" aria-hidden="true">
         <img class="brand-logo" src="/assets/ajur5.svg" alt="logo" aria-hidden="true">
         <img class="brand-logo" src="/assets/ajur6.svg" alt="logo" aria-hidden="true">
-        <img class="brand-logo" src="/assets/ajur7.svg" alt="logo" aria-hidden="true">
+        <img class="brand-logo" src="/assets/ajur7.svg" alt="logo" aria-hidden="true"> 
       </a>
-        <button class="menu-toggle" (click)="toggleMenu()">
-          ☰
-        </button>
+
        <!-- Menu -->
         <nav [class.open]="menuOpen" class="menu">
           <a [routerLink]="['/']" class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{ 'MENU.HOME' | translate }}</a>
@@ -34,9 +32,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
         </nav>
 
         <div class="language-selector">
+          <button class="menu-toggle" (click)="toggleMenu()">☰</button>
           <button [class.active]="currentLang === 'en'" (click)="changeLanguage('en')">En</button>
           <button [class.active]="currentLang === 'pl'" (click)="changeLanguage('pl')">Pl</button>
         </div>
+
       </header>
     </section>
     <section class="content">

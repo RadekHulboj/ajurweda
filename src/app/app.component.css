@@ -168,3 +168,9 @@ main {
     display: none !important;
   }
 }
+
+@media (max-width: 768px) {
+  .brand-logo {
+    display: none !important;
+  }
+}
