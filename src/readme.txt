@@ -7,7 +7,7 @@ DONE  4.4) ok-> kubectl port-forward --namespace ingress-nginx service/ingress-n
 DONE  4.5) helm
 DONE  4.6) Instalacja na Win 11 
 DONE  4.7) make angular production on image
-      4.8) Moblie device look like 
+DONE  4.8) Moblie device look like 
        75) clean code remove housing names 
        76) css, photo store in db
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
