@@ -9,9 +9,12 @@ DONE  4.6) Instalacja na Win 11
 DONE  4.7) make angular production on image
 DONE  4.8) Moblie device look like 
        75) clean code remove housing names 
+DONE 75.2) sprawdzic jak dziklala bez port-forward (dziala w minikube tunnel + etc/hosts + host na DNS (naze ustawiony nie ip))
+     75.5) ng serve zamienic na produkcje angular
        76) css, photo store in db
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
+
 
 
 // ingress
@@ -30,6 +33,17 @@ scp  ../ajurweda/ayurveda-server.tar  radek@192.168.1.11:"C:\\Users\\radek\\ayur
 scp  ../ajurweda/angular-app.tar  radek@192.168.1.11:"C:\\Users\\radek\\angular-app.tar"
 
 
+// Bez PORTFORWARD
+1) dziala https://angular-app.local/ ale gdy jest http://angular-app.local/ to juz nie dziala
+2) w angular_ingress.yaml -> host: angular-app.local
+3) run -> minikube tunnel
+4) kubectl get ingress -A  
+NAMESPACE   NAME               CLASS   HOSTS               ADDRESS        PORTS   AGE
+default     ayurveda-ingress   nginx   angular-app.local   10.103.1.165   80      72m
+3) sudo nano etc/hosts -> 10.103.1.165 angular-app.local
+
+
+
 //BACKEND
 eval $(minikube docker-env)
 eval $(minikube docker-env --unset)
@@ -38,7 +52,8 @@ docker save ayurveda-server -o ayurveda-server.tar
 minikube image load ayurveda-server.tar
 minikube ssh -- docker images
 kubectl port-forward service/angular-app-service 4200:4200
-kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80
+kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80 (to localhost:4200)
+kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80 (to locahost:8080)
 helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml
 
 //FRONTED
