@@ -40,7 +40,7 @@ scp  ../ajurweda/angular-app.tar  radek@192.168.1.11:"C:\\Users\\radek\\angular-
 4) kubectl get ingress -A  
 NAMESPACE   NAME               CLASS   HOSTS               ADDRESS        PORTS   AGE
 default     ayurveda-ingress   nginx   angular-app.local   10.103.1.165   80      72m
-3) sudo nano etc/hosts -> 10.103.1.165 angular-app.local
+3) sudo nano /etc/hosts -> 10.103.1.165 angular-app.local
 
 
 
