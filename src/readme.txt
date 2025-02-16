@@ -9,7 +9,7 @@ DONE  4.6) Instalacja na Win 11
 DONE  4.7) make angular production on image
 DONE  4.8) Moblie device look like 
        75) clean code remove housing names 
-DONE 75.2) sprawdzic jak dziklala bez port-forward (dziala w minikube tunnel + etc/hosts + host na DNS (naze ustawiony nie ip))
+DONE 75.2) sprawdzic jak dziala bez port-forward (dziala w minikube tunnel + etc/hosts + host na DNS (nazwa ustawiony nie ip i https a to nie super dla ngrok)
      75.5) ng serve zamienic na produkcje angular
        76) css, photo store in db
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
