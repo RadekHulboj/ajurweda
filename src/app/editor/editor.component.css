@@ -34,7 +34,7 @@ body {
 }
 
 .construction-text {
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -43,7 +43,7 @@ body {
 }
 
 .message {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #f0f0f0; /* Light color for the message text */
   margin-top: 15px;
 }

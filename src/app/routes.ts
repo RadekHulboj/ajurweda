@@ -3,7 +3,7 @@ import { HomeComponent } from './events/events.component';
 import { DetailsComponent } from './details/details.component';
 import { ContactComponent } from './contact/contact.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { MsalGuard } from '@azure/msal-angular'; // Importuj MsalGuard tutaj
+// import { MsalGuard } from '@azure/msal-angular'; 
 
 const routeConfig: Routes = [
   {
@@ -29,8 +29,8 @@ const routeConfig: Routes = [
   {
     path: 'editor',
     loadComponent: () => import('./editor/editor.component').then(m => m.EditorComponent), // Lazy load EditorComponent
-    title: 'Admin page',
-    canActivate: [MsalGuard],
+    title: 'Admin page'
+    // canActivate: [MsalGuard],
   }
 ];
 
