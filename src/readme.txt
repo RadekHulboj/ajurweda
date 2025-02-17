@@ -29,8 +29,8 @@ kubectl describe ingress ayurveda-ingress
 //sending email challange on nginx
 kl exec -it pod/ayurveda-server-d57b87474-5mdpv -- curl -X POST http://ayurveda-server-service:8080/api/contact -d '{"firstName": "John", "lastName": "Hulboj", "email": "radek@example.com", "message": "z palca"}' -H "Content-Type: application/json"
 kubectl logs -l app.kubernetes.io/name=ingress-nginx -n ingress-nginx
-scp  ../ajurweda/ayurveda-server.tar  radek@192.168.1.11:"C:\\Users\\radek\\ayurveda-server.tar"
-scp  ../ajurweda/angular-app.tar  radek@192.168.1.11:"C:\\Users\\radek\\angular-app.tar"
+scp  ../ajurweda/ayurveda-server.tar  radek@192.168.1.13:"C:\\Users\\radek\\Documents\\helm_ayurveda\\ayurveda-server.tar"
+scp  ../ajurweda/angular-app.tar  radek@192.168.1.13:"C:\\Users\\radek\\Documents\\helm_ayurveda\\angular-app.tar"
 
 
 // Bez PORTFORWARD
