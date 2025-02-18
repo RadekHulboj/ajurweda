@@ -8,6 +8,8 @@ DONE  4.5) helm
 DONE  4.6) Instalacja na Win 11 
 DONE  4.7) make angular production on image
 DONE  4.8) Moblie device look like 
+DONE  4.9) Contact page ma zle stylowanie poprawic i menu gap ustawic na 0 dla mobile device
+     4.95) Zainstalowac ingress do kubernetes na windows env
        75) clean code remove housing names 
 DONE 75.2) sprawdzic jak dziala bez port-forward (dziala w minikube tunnel + etc/hosts + host na DNS (nazwa ustawiony nie ip i https a to nie super dla ngrok)
      75.5) ng serve zamienic na produkcje angular

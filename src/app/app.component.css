@@ -125,9 +125,15 @@ main {
     background: white;
     padding: 10px;
   }
-
+ 
   .menu.open {
     display: flex;
+  }
+
+  @media (max-width: 768px) {
+    .menu {
+      gap: 10px; /* Zmniejszony odstęp w widoku mobilnym */
+    }
   }
 }
 

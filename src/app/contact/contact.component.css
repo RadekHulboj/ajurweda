@@ -98,16 +98,24 @@ section {
     font-size: 12pt;
   }
 
-  input {
+  input, textarea {
     font-size: 16pt;
     margin-bottom: 15px;
     padding: 10px;
-    width: 400px;
+    width: 100%; /* Teraz pola będą zajmować całą dostępną szerokość */
+    max-width: 400px; /* Opcjonalne ograniczenie maksymalnej szerokości */
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: solid .3px;
+    border-bottom: solid 0.3px;
+    box-sizing: border-box; /* Zapobiega przekraczaniu szerokości kontenera */
   }
+  @media (max-width: 600px) {
+    input, textarea {
+      max-width: 100%; /* Wypełnienie całego ekranu na małych urządzeniach */
+    }
+  }
+
   @media (max-width: 1024px) {
     .listing-photo {
       width: 100%;

@@ -15,7 +15,7 @@ import { HousingService } from '../core/housing.service';
   <section class="container">
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" #filter (keydown.enter)="filterResults(filter.value)">
+        <input type="text" placeholder="Filter by title" #filter (keydown.enter)="filterResults(filter.value)">
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>

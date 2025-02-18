@@ -19,7 +19,7 @@
     border-radius: 8px;
     margin-right: 14px;
     display: inline-block;
-    width: 10%;
+    width: 30%;
   }
   
   button {
@@ -42,5 +42,8 @@
   @media (max-width: 499px) {
     .results {
         grid-template-columns: 1fr;
+    }
+    input[type="text"] {
+      width: 60%; /* Zwiększenie szerokości na małych ekranach */
     }    
   }
