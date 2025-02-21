@@ -60,9 +60,11 @@ kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 
 kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80 (to locahost:8080)
 helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml
 
-//FRONTED
+********************************************* FRONTED ************************************
 kubectl port-forward service/angular-app-service 4200:4200
 docker build -f docker/Dockerfile.angular -t angular-app .
+docker tag angular-app:latest radekh6/angular-app:1.0
+docker push radekh6/angular-app:1.0
 docker save angular-app -o angular-app.tar
 minikube image load angular-app.tar
 minikube ssh -- docker images
@@ -84,4 +86,59 @@ stylistyka obraz sie przesuwa jak naciskam menu navigacje
 Dev environment to execute:
 - ng serve
 - npx json-server --watch /home/radek/Projects/hulboj/ajurweda/src/app/events/db.json --port 3000
+
+
+
+*****************************************************   Azure Container apps   *************************************************
+
+az group create --name ayurveda-rg --location polandcentral
+
+az containerapp env create \
+  --name ayurveda-env \
+  --resource-group ayurveda-rg \
+  --location polandcentral
+
+az containerapp create \
+  --name ayurveda-server \
+  --resource-group ayurveda-rg \
+  --environment ayurveda-env \
+  --image docker.io/radekh6/ayurveda-server:1.0 \
+  --cpu 0.5 --memory 1Gi \
+  --ingress external \
+  --target-port 8080 \
+  --env-vars "SPRING_APPLICATION_NAME=Ayurveda" \
+             "SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb" \
+             "SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver" \
+             "SPRING_DATASOURCE_USERNAME=sa" \
+             "SPRING_DATASOURCE_PASSWORD=" \
+             "SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.H2Dialect" \
+             "AZURE_KEYVAULT_URI=https://ayurveda-eu.vault.azure.net/" \
+             "AYURVEDA_ALLOWED_CROSS_ORIGIN=http://angular-app.polandcentral.azurecontainerapps.io" \
+             "AYURVEDA_AZURE_EMAIL_PASSWORD=enNzbWFxb254b3JhaWVhZQ==" \
+             "AYURVEDA_AZURE_KEYVAULT_EMAIL_PASSWORD=YXl1cnZlZGEtZW1haWw="
+
+az containerapp logs show --name ayurveda-server --resource-group ayurveda-rg --follow
+az containerapp revision list --name ayurveda-server --resource-group ayurveda-rg
+az containerapp logs show --name ayurveda-server --resource-group ayurveda-rg
+az containerapp revision list --name ayurveda-server --resource-group ayurveda-rg --query "[].properties.runningStateDetails"
+docker run --rm -e SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb radekh6/ayurveda-server:1.0
+az containerapp show --name ayurveda-server --resource-group ayurveda-rg --query properties.ingress.fqdn -o tsv
+az containerapp list --resource-group ayurveda-rg --output table
+
+
+// frontend
+
+az containerapp create \
+  --name angular-app \
+  --resource-group ayurveda-rg \
+  --environment ayurveda-env \
+  --image docker.io/radekh6/angular-app:2.0 \
+  --cpu 0.5 --memory 1Gi \
+  --ingress external \
+  --target-port 4200 \
+  --env-vars "API_TARGET=ayurveda-server.redrock-11e93e23.polandcentral.azurecontainerapps.io"
+
+az containerapp logs show --name angular-app --resource-group ayurveda-rg --follow
+az containerapp update --name angular-app --resource-group ayurveda-rg --image docker.io/radekh6/angular-app:1.0
+az containerapp revision restart --name angular-app --resource-group ayurveda-rg --revision angular-app--3yzpf7m
 
