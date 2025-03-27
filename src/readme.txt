@@ -10,7 +10,9 @@ DONE  4.7) make angular production on image
 DONE  4.8) Moblie device look like 
 DONE  4.9) Contact page ma zle stylowanie poprawic i menu gap ustawic na 0 dla mobile device
 DONE 4.91) Azure Container Apps (backend and fronted)
-     4.93) (Azure Port Gateway) czy Trafic Manager
+DONE 4.93) (Azure Port Gateway) czy Trafic Manager - traffic manager sie nie nadaje bo jest do Azure zasobow a nie on-prem a Application Gateway nie radzi sobie z certyfikatem 
+            moze trzeba ten certfikat wrzucic do Azure KeyVault ale szkoda zachodu na Azure. To jest chmura nie na male projekty. wiec sam zrobi loadbalancer, reverse proxy 
+    4.935) Lokalnie postawienie nginx (zamisat Applcation Gateway) + OVH CNAME (redirect z jola.hulboj.eu na ngrok)
      4.94) ng serve zamienic na produkcje angular
      4.95) Zainstalowac ingress do kubernetes na windows env
        75) clean code remove housing names 
@@ -18,6 +20,9 @@ DONE 75.2) sprawdzic jak dziala bez port-forward (dziala w minikube tunnel + etc
        76) css, photo store in db
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
+
+// certbot bardzo fajne
+sudo certbot certonly --manual --preferred-challenges=dns --email radekhulboj@gmail.com -d jola.hulboj.eu
 
 
 
@@ -142,3 +147,15 @@ az containerapp logs show --name angular-app --resource-group ayurveda-rg --foll
 az containerapp update --name angular-app --resource-group ayurveda-rg --image docker.io/radekh6/angular-app:1.0
 az containerapp revision restart --name angular-app --resource-group ayurveda-rg --revision angular-app--3yzpf7m
 
+
+
+# cert manager
+
+kubectl logs -n cert-manager deploy/cert-manager -f  #sprawdzenie logow cert manager
+kubectl get clusterrolebinding -o wide | grep cert-manager
+
+wyglada na to ze mam stworzyc wlasnego webhook dla cert managera
+https://github.com/baarde/cert-manager-webhook-ovh
+
+
+dig -t TXT _acme-challenge.jola.hulboj.eu

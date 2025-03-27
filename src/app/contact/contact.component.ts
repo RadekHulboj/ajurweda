@@ -51,12 +51,16 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
     <section class="notification" *ngIf="successMessage">
       <p>{{ successMessage }}</p>
     </section>
+    <section class="failNotification" *ngIf="failMessage">
+      <p>{{ failMessage }}</p>
+    </section>
   </article>
   `,
   styleUrls: ['./contact.component.css', '../core/shared.styles.css']
 })
 export class ContactComponent {
   successMessage = "";
+  failMessage = "";
   housingService = inject(HousingService);
 
   applyForm = new FormGroup({
@@ -82,9 +86,9 @@ export class ContactComponent {
             setTimeout(() => (this.successMessage = ''), 3000);
           },
           error: (error) => {
-            this.successMessage = 'An error occurred. Please try again.';
+            this.failMessage = JSON.stringify("An error occurred. Please try again.");
             console.error('Error:', error);
-            setTimeout(() => (this.successMessage = ''), 3000);
+            setTimeout(() => (this.failMessage = ''), 3000);
           }
         });
     }
