@@ -58,6 +58,17 @@ default     ayurveda-ingress   nginx   *       10.103.1.165   80      7h34m
 minikube tunel 
 i w przegladarce wpisujemy https://10.103.1.165  (bo adres jest nie z cluster brany z minikube ip, bo to nie jest PortNode,
 tylko adres jest dynamicznie brany z warsty 7 http loadbalancera czyli 10.103.1.165 bo ingress go przydziela w kubernetes)
+6) z domain name 
+kubectl get ingress -A
+NAMESPACE   NAME               CLASS   HOSTS               ADDRESS        PORTS   AGE
+default     ayurveda-ingress   nginx   angular-app.local   10.103.1.165   80      7h47m
+minikube tunel 
+i w przegladarce wpisujemy https://angular-app.local  (bo adres jest nie z cluster brany z minikube ip, bo to nie jest PortNode,
+tylko adres jest dynamicznie brany z warsty 7 http loadbalancera czyli 10.103.1.165 bo ingress go przydziela w kubernetes)
+ -oraz-
+sudo nano /etc/hosts
+10.103.1.165 angular-app.local
+
 
 //BACKEND
 eval $(minikube docker-env)
