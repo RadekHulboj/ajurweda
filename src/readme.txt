@@ -50,8 +50,14 @@ scp  ../ajurweda/angular-app.tar  radek@192.168.1.13:"C:\\Users\\radek\\Document
 NAMESPACE   NAME               CLASS   HOSTS               ADDRESS        PORTS   AGE
 default     ayurveda-ingress   nginx   angular-app.local   10.103.1.165   80      72m
 3) sudo nano /etc/hosts -> 10.103.1.165 angular-app.local
-
-
+lub
+5) bez domain name
+kubectl get ingress -A
+NAMESPACE   NAME               CLASS   HOSTS   ADDRESS        PORTS   AGE
+default     ayurveda-ingress   nginx   *       10.103.1.165   80      7h34m
+minikube tunel 
+i w przegladarce wpisujemy https://10.103.1.165  (bo adres jest nie z cluster brany z minikube ip, bo to nie jest PortNode,
+tylko adres jest dynamicznie brany z warsty 7 http loadbalancera czyli 10.103.1.165 bo ingress go przydziela w kubernetes)
 
 //BACKEND
 eval $(minikube docker-env)
