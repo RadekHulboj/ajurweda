@@ -80,7 +80,8 @@ minikube ssh -- docker images
 kubectl port-forward service/angular-app-service 4200:4200
 kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 4200:80 (to localhost:4200)
 kubectl port-forward --namespace ingress-nginx service/ingress-nginx-controller 8080:80 (to locahost:8080)
-helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml
+(helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml)
+helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml --values=./ayurveda/env/.values-dev.yaml 
 
 ********************************************* FRONTED ************************************
 kubectl port-forward service/angular-app-service 4200:4200
