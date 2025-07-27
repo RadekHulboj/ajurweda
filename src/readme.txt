@@ -73,7 +73,7 @@ sudo nano /etc/hosts
 //BACKEND
 eval $(minikube docker-env)
 eval $(minikube docker-env --unset)
-docker build -f docker/Dockerfile -t ayurveda-server .
+docker build --no-cache -f docker/Dockerfile -t ayurveda-server .
 docker save ayurveda-server -o ayurveda-server.tar
 minikube image load ayurveda-server.tar
 minikube ssh -- docker images
@@ -85,7 +85,7 @@ helm upgrade -i ayurveda  ./ayurveda --values=./ayurveda/env/values-dev.yaml --v
 
 ********************************************* FRONTED ************************************
 kubectl port-forward service/angular-app-service 4200:4200
-docker build -f docker/Dockerfile.angular -t angular-app .
+docker build --no-cache -f docker/Dockerfile.angular -t angular-app .
 docker tag angular-app:latest radekh6/angular-app:1.0
 docker push radekh6/angular-app:1.0
 docker save angular-app -o angular-app.tar
