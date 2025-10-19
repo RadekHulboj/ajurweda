@@ -177,3 +177,16 @@ https://github.com/baarde/cert-manager-webhook-ovh
 
 
 dig -t TXT _acme-challenge.jola.hulboj.eu
+
+
+
+1)
+angular-app przebuduj z CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
+https://chatgpt.com/share/68867314-c3f4-8008-a758-ab725ccbaee5
+2)
+przebuduj na produkcyjna versje potem
+
+
+problem z nginx
+kubectl patch svc ingress-nginx-controller -n ingress-nginx -p '{"spec": {"type": "LoadBalancer"}}'
+(kubectl get svc ingress-nginx-controller -n ingress-nginx -o yaml > ingress-service.yaml)
