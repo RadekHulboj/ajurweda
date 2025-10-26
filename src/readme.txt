@@ -21,9 +21,19 @@ DONE 75.2) sprawdzic jak dziala bez port-forward (dziala w minikube tunnel + etc
        80) Bug git environment variable for email do not work only for email ??? see ayurveda.azure.email.password
 REJECT 99) add MSAL for editor page Azure ConectID (to nadal wyglada hujowo)
 
+// images load to 
+docker image build --no-cache -f Dockerfile.angular.nginx -t angular-nginx:3.0 .
+docker save angular-nginx:3.0 -o angular-nginx.tar
+sudo scp  ./angular-nginx.tar  radek@192.168.1.11:"/home/radek/angular-nginx.tar"
+sudo ctr -n k8s.io images import angular-nginx.tar
+sudo crictl ps         # lista kontenerów
+sudo crictl images     # lista obrazów
+sudo crictl logs <id>  # logi kontenera
+
+
+
 // certbot bardzo fajne
 sudo certbot certonly --manual --preferred-challenges=dns --email radekhulboj@gmail.com -d jola.hulboj.eu
-
 
 
 // ingress
